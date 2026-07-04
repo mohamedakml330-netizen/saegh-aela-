@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صائغ العيلة</title>
 
+<style>
+body{
+    margin:0;
+    font-family:Tahoma, Arial;
+    background:#000;
+    color:#FFD700;
+}
+
+header{
+    text-align:center;
+    padding:20px;
+    font-size:26px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+button{
+    background:#111;
+    color:#FFD700;
+    border:1px solid #FFD700;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#FFD700;
+    color:#000;
+}
+
+.section{
+    display:none;
+    padding:15px;
+}
+
+.active{
+    display:block;
+}
+
+.card{
+    background:#111;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #FFD700;
+}
+</style>
+</head>
+
+<body>
+
+<header>💎 صائغ العيلة</header>
+
+<nav>
+<button onclick="show('gold')">الذهب</button>
+<button onclick="show('dollar')">الدولار</button>
+<button onclick="show('currencies')">العملات</button>
+<button onclick="show('bullion')">السبائك</button>
+</nav>
+
+<!-- GOLD -->
+<div id="gold" class="section active">
+<div class="card">عيار 24 - شراء / بيع</div>
+<div class="card">عيار 21 - شراء / بيع</div>
+<div class="card">عيار 18 - شراء / بيع</div>
+<div class="card">عيار 14 - شراء / بيع</div>
+<div class="card">الجنيه الذهب</div>
+</div>
+
+<!-- DOLLAR -->
+<div id="dollar" class="section">
+<div class="card">سعر الدولار في البنك المركزي</div>
+<div class="card">سعر الشراء</div>
+<div class="card">سعر البيع</div>
+</div>
+
+<!-- CURRENCIES -->
+<div id="currencies" class="section">
+<div class="card">الدولار</div>
+<div class="card">اليورو</div>
+<div class="card">الريال السعودي</div>
+<div class="card">الدرهم</div>
+<div class="card">الجنيه الإسترليني</div>
+</div>
+
+<!-- BULLION -->
+<div id="bullion" class="section">
+<div class="card">سبائك BTC</div>
+<div class="card">سبائك SAM</div>
+<div class="card">لازوردي</div>
+<div class="card">PAMP</div>
+<div class="card">Valcambi</div>
+<div class="card">Argor Heraeus</div>
+<div class="card">Emirates Gold</div>
+</div>
+
+<script>
+function show(id){
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
